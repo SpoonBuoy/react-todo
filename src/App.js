@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import Banner from './Banner';
+import Nav from './Nav';
+import ActiveTask from './ActiveTask';
+import CanceledTask from './CanceledTask';
+import CompletedTask from './CompletedTask';
+import CreateTask from './CreateTask';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="app">
+          <Router>
+          <Banner />
+            <Switch>
+              <Route exact path = '/CreateTask'>
+                    <CreateTask />
+              </Route>
+              <Route exact path = '/active'>
+                  <ActiveTask />
+              </Route>
+              <Route exact path = '/completed'>
+                  <CompletedTask />
+              </Route>
+              <Route exact path = '/canceled'>
+                  <CanceledTask />
+              </Route>
+            </Switch>
+          </Router>
+      </div>
   );
 }
 

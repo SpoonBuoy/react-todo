@@ -42,12 +42,14 @@ div.active-task-name{
     text-align:left;
     padding-left : 15px;
     padding-right : 15px;
+    color : white;
 }
 div.passive-task-name{
     background-color : #b51a1a;
     text-align:left;
     padding-left : 15px;
     padding-right : 15px;
+    color : white;
 }
 div.active-task-details{
     text-align:left;
@@ -68,8 +70,9 @@ div.completed-task-details{
 button#active-btn{
     width : 80px;
     height: 30px;
-    background-color: #402eb4;
-    border :none;
+    /* background-color: #402eb4; */
+    background-color: white;
+    border : 3px solid #402eb4;
     box-shadow: none;
     font-weight : bold;
     margin-right: 10px;
@@ -78,8 +81,9 @@ button#active-btn{
 button#passive-btn{
     width : 80px;
     height: 30px;
-    background-color: #b51a1a;
-    border :none;
+    /* background-color: #b51a1a; */
+    background-color: white;
+    border : 3px solid #b51a1a;
     box-shadow: none;
     font-weight : bold;
     margin-right: 10px;
@@ -118,10 +122,6 @@ nav ul li{
     text-align: center;
     font-weight: bold;
 }
-li.active-link:hover{
-    border-bottom : 3px solid #402eb4;
-}
-
 a{
     text-decoration: none;
     color: white;
@@ -166,5 +166,45 @@ div.submit-btn button{
     background-color: #2bb139;
     border: 2px solid #2bb139;
     font-weight: bold;
+}
+/* some animations */
+button#passive-btn:hover{
+    animation : passive-btn-anim 0.5s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+button#active-btn:hover{
+    animation : active-btn-anim 0.5s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+nav a:hover{
+    animation-name: nav-anim;
+    animation-duration : 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: radial;
+}
+@keyframes passive-btn-anim {
+    from {
+        background-color: white;
+        color : black;}
+    to{
+        background-color: #b51a1a;
+        color:white;
+    }
+}
+@keyframes active-btn-anim {
+    from {
+        background-color: white;
+        color : black;}
+    to{
+        background-color: #402eb4;
+        color:white;
+    }
+}
+@keyframes nav-anim {
+    from{color : white}
+    to{color:grey}
 }
 

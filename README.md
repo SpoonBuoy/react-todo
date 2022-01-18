@@ -1,6 +1,6 @@
 ## todo app 
 for learning purposes
-### Frontent : 
+### Frontend : 
     HTML, CSS, REACT
 
 ### Backend :
